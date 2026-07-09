@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWS 6 Online - Local &amp; National News</title>
+<meta name="description" content="NEWS 6 Online - Your source for local, national and world news.">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #4a4f57;
+    background-image:
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+    font-family: "Times New Roman", Times, serif;
+    color: #1a1a1a;
+    font-size: 13px;
+  }
+
+  a { color: #0000cc; text-decoration: underline; }
+  a:visited { color: #551a8b; }
+  a:hover { color: #cc0000; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #e9e4d4;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+  }
+
+  /* ---------- TOP BAR ---------- */
+  .topbar {
+    background: #0a1628;
+    color: #8fa3bf;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+  }
+  .topbar a { color: #c9d4e0; text-decoration: none; }
+  .topbar a:hover { color: #ffffff; }
+
+  /* ---------- HEADER / MASTHEAD ---------- */
+  .masthead {
+    background: #0a1628;
+    padding: 14px 16px 10px 16px;
+    border-bottom: 4px double #c41e3a;
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo {
+    background: #c41e3a;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border: 3px solid #ffffff;
+    display: inline-block;
+    text-shadow: 1px 1px 0 #700010;
+  }
+  .logo span { color: #cfd9e8; }
+  .tagline {
+    color: #9fb0c7;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+  }
+  .datebar {
+    margin-top: 8px;
+    color: #6f8099;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    border-top: 1px solid #23344d;
+    padding-top: 5px;
+  }
+
+  /* ---------- MARQUEE / TICKER ---------- */
+  .ticker-wrap {
+    background: #c41e3a;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid #000;
+  }
+  .ticker-label {
+    background: #000;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  marquee { display: inline; }
+
+  /* ---------- NAV ---------- */
+  .navbar {
+    background: #cfc9b4;
+    border-bottom: 2px solid #999;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .navbar a {
+    color: #0a1628;
+    text-decoration: none;
+    margin-right: 4px;
+  }
+  .navbar a:hover { color: #c41e3a; }
+  .navbar .sep { color: #888; margin-right: 4px; }
+
+  /* ---------- LAYOUT TABLE ---------- */
+  .content-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .content-table > tbody > tr > td {
+    vertical-align: top;
+    padding: 12px;
+  }
+  .main-col { width: 68%; border-right: 1px dashed #999; }
+  .side-col { width: 32%; background: #ddd6c1; }
+
+  /* ---------- HEADLINE STORY ---------- */
+  .headline-box {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 16px;
+    background: #f4f0e4;
+  }
+  .eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #c41e3a;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .headline-box h1 {
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0 0 8px 0;
+  }
+  .byline {
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .headline-box p { line-height: 1.5; margin: 0 0 10px 0; }
+
+  .watch-box {
+    background: #0a1628;
+    border: 2px solid #c41e3a;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .watch-box a {
+    color: #ffffff;
+    background: #c41e3a;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    border: 1px solid #fff;
+  }
+  .watch-box a:hover { background: #a5182f; }
+  .watch-box .sub {
+    color: #8fa3bf;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  /* ---------- STORY GRID ---------- */
+  .story {
+    border-bottom: 1px solid #b8b19c;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .story h2 {
+    font-size: 15px;
+    margin: 0 0 4px 0;
+  }
+  .story .cat {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    color: #6f8099;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .story p { margin: 4px 0 0 0; line-height: 1.45; }
+  .story .readmore { font-size: 11px; }
+
+  /* ---------- SIDEBAR WIDGETS ---------- */
+  .widget {
+    background: #f4f0e4;
+    border: 1px solid #999;
+    margin-bottom: 14px;
+  }
+  .widget-title {
+    background: #0a1628;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+  }
+  .widget-body {
+    padding: 8px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .weather-temp {
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #0a1628;
+  }
+  .brief-list { margin: 0; padding-left: 16px; }
+  .brief-list li { margin-bottom: 6px; }
+
+  .badge-row {
+    text-align: center;
+    padding: 6px;
+  }
+  .badge {
+    display: inline-block;
+    border: 1px solid #999;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    padding: 3px 5px;
+    margin: 2px;
+    color: #333;
+  }
+
+  .counter-box {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #00ff44;
+    padding: 8px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .guestbook-entry {
+    border-bottom: 1px dotted #aaa;
+    padding: 4px 0;
+    font-size: 11px;
+  }
+  .guestbook-entry .gname { font-weight: bold; }
+  .guestbook-entry .gdate { color: #888; font-size: 9px; }
+
+  /* ---------- FOOTER ---------- */
+  .footer {
+    background: #0a1628;
+    color: #7d8ea3;
+    padding: 14px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .footer .links {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .footer .links a { color: #c9d4e0; margin-right: 10px; text-decoration: none; }
+  .footer .links a:hover { text-decoration: underline; }
+  .disclaimer {
+    font-size: 9px;
+    line-height: 1.6;
+    color: #566579;
+    border-top: 1px solid #23344d;
+    padding-top: 8px;
+  }
+
+  ::selection { background: #c41e3a; color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>WELCOME, GUEST | <a href="#">Sign In</a> | <a href="#">My NEWS 6</a></span>
+    <span id="clock">LOCAL TIME: --:--:--</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="logo-row">
+      <div class="logo">NEWS<span>6</span></div>
+      <div>
+        <div class="tagline">&quot;FIRST WITH THE FACTS&quot;</div>
+      </div>
+    </div>
+    <div class="datebar">FRIDAY, JUNE 27, 2003 &nbsp;|&nbsp; UPDATED 11:52 PM &nbsp;|&nbsp; CHANNEL 6 - YOUR LOCAL NEWS STATION</div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <span class="ticker-label">BREAKING</span>
+    <marquee behavior="scroll" direction="left" scrollamount="3">
+      CARGO VESSEL LOST OFF COAST, NO DISTRESS SIGNAL RECEIVED &nbsp;&bull;&nbsp; REGION HIT BY UNEXPLAINED TREMORS FIVE HOURS LATER &nbsp;&bull;&nbsp; EMERGENCY CREWS REMAIN ON SCENE &nbsp;&bull;&nbsp; FULL BROADCAST RECORDING NOW AVAILABLE &nbsp;&bull;&nbsp;
+    </marquee>
+  </div>
+
+  <!-- NAV -->
+  <div class="navbar">
+    <a href="#">HOME</a><span class="sep">|</span>
+    <a href="#">LOCAL</a><span class="sep">|</span>
+    <a href="#">NATION</a><span class="sep">|</span>
+    <a href="#">WORLD</a><span class="sep">|</span>
+    <a href="#">BUSINESS</a><span class="sep">|</span>
+    <a href="#">WEATHER</a><span class="sep">|</span>
+    <a href="#">OPINION</a><span class="sep">|</span>
+    <a href="#">ARCHIVE</a>
+  </div>
+
+  <!-- MAIN CONTENT TABLE -->
+  <table class="content-table" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <!-- MAIN COLUMN -->
+        <td class="main-col">
+
+          <div class="headline-box">
+            <div class="eyebrow">LOCAL &nbsp;&bull;&nbsp; BREAKING NEWS</div>
+            <h1>Cargo Ship Vanishes Off Coast; No Distress Signal Sent</h1>
+            <div class="byline">By NEWS 6 Newsroom Staff &nbsp;|&nbsp; Filed 11:47 PM, June 27, 2003</div>
+            <p>
+              A cargo vessel sank off the coast late Friday night in what officials are calling
+              an unusual and still-unexplained incident. Local fishermen observing the ship through
+              binoculars reported that it went under in <strong>less than a minute</strong>, with no
+              visible signs of listing or structural failure prior to submersion.
+            </p>
+            <p>
+              No distress call was received from the vessel. Coast Guard radio contact could not be
+              established either before or after the sinking. Rescue crews were dispatched to the
+              area but have not yet located wreckage or survivors.
+            </p>
+            <p>
+              Approximately five hours after the ship went down, the surrounding region experienced
+              seismic activity strong enough to damage several buildings in nearby coastal towns.
+              Seismologists have not commented on any possible connection between the two events.
+              NEWS 6 aired a special emergency broadcast covering both developments as they happened.
+            </p>
+
+            <div class="watch-box">
+              <a href="https://www.youtube.com/@YOUR_CHANNEL_HERE" target="_blank" rel="noopener">&#9654; WATCH TONIGHT'S BROADCAST</a>
+              <div class="sub">video_archive // broadcast_062703.rec // running time 02:47</div>
+            </div>
+          </div>
+
+          <div class="story">
+            <div class="cat">Local</div>
+            <h2>Authorities Investigate Late-Night Gathering at Old Mill Road</h2>
+            <p>
+              Police responded to reports of a large group gathered on private property near the
+              old grain mill off Route 9 shortly before midnight. Witnesses described chanting and
+              a bonfire visible from the road. No arrests were made, and the group had dispersed by
+              the time officers arrived. This is the third such report in the area this month.
+              Neighbors have asked the county to increase patrols in the area.
+            </p>
+            <div class="readmore"><a href="#">Continue reading &raquo;</a></div>
+          </div>
+
+          <div class="story">
+            <div class="cat">Local</div>
+            <h2>Two Injured in Two-Vehicle Collision on Highway 9</h2>
+            <p>
+              Two people were taken to County General with non-life-threatening injuries following
+              a collision near the Highway 9 overpass Friday afternoon. Police say wet road conditions
+              may have contributed to the crash. The highway was closed for roughly ninety minutes
+              while crews cleared the scene.
+            </p>
+            <div class="readmore"><a href="#">Continue reading &raquo;</a></div>
+          </div>
+
+          <div class="story">
+            <div class="cat">Business</div>
+            <h2>Markets Slide as Tech Sector Jitters Continue</h2>
+            <p>
+              Stocks closed lower for the third straight session Friday, with the Nasdaq shedding
+              1.8% amid renewed concern over technology-sector earnings. Analysts remain divided on
+              whether the pullback signals a broader correction or a routine adjustment following
+              recent gains. Trading volume was described as &quot;moderate&quot; by floor sources.
+            </p>
+            <div class="readmore"><a href="#">Continue reading &raquo;</a></div>
+          </div>
+
+          <div class="story">
+            <div class="cat">World</div>
+            <h2>Diplomats Push for Ceasefire as Overseas Conflict Enters Third Week</h2>
+            <p>
+              International officials met for a second round of talks Friday in an effort to broker
+              a temporary ceasefire in the ongoing overseas conflict. A spokesperson described the
+              talks as &quot;constructive but incomplete,&quot; with both sides said to be weighing
+              proposed terms over the weekend. Humanitarian groups have called for safe corridors to
+              be established regardless of the outcome.
+            </p>
+            <div class="readmore"><a href="#">Continue reading &raquo;</a></div>
+          </div>
+
+        </td>
+
+        <!-- SIDEBAR -->
+        <td class="side-col">
+
+          <div class="counter-box">
+            YOU ARE VISITOR<br>
+            <span id="hitcounter">004827</span>
+          </div>
+
+          <div style="height:10px;"></div>
+
+          <div class="widget">
+            <div class="widget-title">LOCAL WEATHER</div>
+            <div class="widget-body">
+              <div class="weather-temp">61&deg;F</div>
+              Overcast, light coastal fog<br>
+              Wind: 6 mph NE<br>
+              Tide: high 11:58 PM<br>
+              <em>Minor tremors reported in the region overnight. No further advisories at this time.</em>
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">LOCAL BRIEFS</div>
+            <div class="widget-body">
+              <ul class="brief-list">
+                <li>County fair postponed one week due to venue repairs.</li>
+                <li>Public library extends summer hours starting Monday.</li>
+                <li>Several fishing crews report unusually strong currents this week; Coast Guard says conditions remain within normal range.</li>
+                <li>Water main repair on Elm Street may affect pressure through the weekend.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">GUESTBOOK</div>
+            <div class="widget-body">
+              <div class="guestbook-entry">
+                <span class="gname">jenna_m</span> <span class="gdate">06/26/03</span><br>
+                anyone else's cable been cutting out around midnight?? happened again last night
+              </div>
+              <div class="guestbook-entry">
+                <span class="gname">rt_fisherman</span> <span class="gdate">06/24/03</span><br>
+                tides have been weird all week out past the point. probably nothing
+              </div>
+              <div class="guestbook-entry">
+                <span class="gname">webmaster</span> <span class="gdate">06/01/03</span><br>
+                site updated with new local briefs section! more to come
+              </div>
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">SITE INFO</div>
+            <div class="badge-row">
+              <span class="badge">BEST VIEWED<br>800x600</span>
+              <span class="badge">IE 5.0+</span>
+              <span class="badge">56K MODEM<br>FRIENDLY</span>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Advertise</a>
+      <a href="#">Careers</a>
+      <a href="#">Site Map</a>
+      <a href="#">Archive</a>
+    </div>
+    <div>&copy; 2003 NEWS 6 Broadcasting Co. All rights reserved. Last updated 06/27/2003.</div>
+    <div class="disclaimer">
+      This website is a work of fiction created as part of an independent analog horror series.
+      All names, events, organizations, and news items depicted are fictional. Any resemblance to
+      real persons, places, or events is purely coincidental and unintentional. No offense is
+      intended toward any individual, group, or organization. This site exists purely for
+      entertainment purposes as an extension of the accompanying video series.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // fake live clock
+  function updateClock() {
+    var now = new Date();
+    var h = now.getHours().toString().padStart(2,'0');
+    var m = now.getMinutes().toString().padStart(2,'0');
+    var s = now.getSeconds().toString().padStart(2,'0');
+    document.getElementById('clock').textContent = 'LOCAL TIME: ' + h + ':' + m + ':' + s;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // hit counter that ticks up oddly on load, then occasionally glitches
+  (function() {
+    var el = document.getElementById('hitcounter');
+    var base = 4827;
+    var display = base;
+    el.textContent = display.toString().padStart(6,'0');
+    setTimeout(function() {
+      display += 1;
+      el.textContent = display.toString().padStart(6,'0');
+    }, 1800);
+  })();
+</script>
+
+</body>
+</html>
