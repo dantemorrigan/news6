@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<script src="./sounds.js"></script>
 <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
@@ -11,51 +12,51 @@
 <helmet>
 <style>
   @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-  body { margin:0; background:#c9c4b4; }
-  a.n6link { color:#0033cc; text-decoration:none; }
-  a.n6link:hover { color:#0033cc; text-decoration:underline; }
-  a.n6navlink { color:#ffffff; text-decoration:none; }
-  a.n6navlink:hover { color:#ffe27a; text-decoration:underline; }
-  ::selection { background:#0a1f3d; color:#fff; }
+  body { margin:0; background:#000; }
+  a.n6link { color:#ffffff; text-decoration:underline; }
+  a.n6link:hover { background:#ffffff; color:#000000; }
+  a.n6navlink { color:#e8e8e8; text-decoration:none; }
+  a.n6navlink:hover { background:#ffffff; color:#000000; }
+  ::selection { background:#ffffff; color:#000000; }
 </style>
 </helmet>
 
-<div style="font-family:Verdana, Arial, Helvetica, sans-serif; background:#c9c4b4; min-height:100vh; display:flex; justify-content:center;">
-<div style="width:100%; max-width:1920px; background:#e9e6da; box-shadow:0 0 0 1px #999;">
+<div style="font-family:Verdana, Arial, Helvetica, sans-serif; background:#000; min-height:100vh; display:flex; justify-content:center;">
+<div style="width:100%; max-width:1920px; background:#000; box-shadow:0 0 0 1px #444; background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px);">
 
   <!-- UTILITY BAR -->
-  <div class="n6-util" style="background:#0a1f3d; color:#c9d6e8; font-size:11px; padding:4px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #d4af37;">
-    <div>WELCOME TO NEWS 6 ONLINE &nbsp;|&nbsp; <span style="color:#8fa8cc;">Serving the coastal region since 1974</span></div>
+  <div class="n6-util" style="background:#000; color:#888; font-size:11px; padding:4px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #444; font-family:'Courier New',monospace;">
+    <div>WELCOME TO NEWS 6 ONLINE &nbsp;|&nbsp; <span style="color:#666;">Serving the coastal region since 1974</span></div>
     <div>LOCAL TIME: <span style="color:#ffffff; font-weight:bold;">{{ clockStr }}</span></div>
   </div>
 
   <!-- MASTHEAD -->
-  <div class="n6-masthead" style="padding:18px 24px 10px 24px; border-bottom:1px solid #999; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+  <div class="n6-masthead" style="padding:18px 24px 10px 24px; border-bottom:1px solid #444; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:10px;">
     <div style="display:flex; align-items:baseline; gap:16px;">
-      <div class="n6-logo" style="font-family:Georgia, 'Times New Roman', serif; font-weight:900; font-size:64px; letter-spacing:-2px; color:#0a1f3d; line-height:1;">NEWS<span style="color:#7a0e0e;">6</span></div>
-      <div class="n6-tagline" style="font-family:Georgia, serif; font-style:italic; font-size:16px; color:#555; padding-bottom:8px;">"First With The Facts"</div>
+      <div class="n6-logo" style="font-family:Georgia, 'Times New Roman', serif; font-weight:900; font-size:64px; letter-spacing:-2px; color:#ffffff; line-height:1;">NEWS<span style="background:#ffffff; color:#000000; padding:0 8px; margin-left:4px;">6</span></div>
+      <div class="n6-tagline" style="font-family:Georgia, serif; font-style:italic; font-size:16px; color:#888; padding-bottom:8px;">"First With The Facts"</div>
     </div>
-    <div class="n6-datebar" style="text-align:right; font-size:12px; color:#444; padding-bottom:8px;">
+    <div class="n6-datebar" style="text-align:right; font-size:12px; color:#888; padding-bottom:8px; font-family:'Courier New',monospace;">
       FRIDAY, JUNE 27, 2003 &nbsp;|&nbsp; UPDATED 11:52 PM<br/>
       CHANNEL 6 &mdash; YOUR LOCAL NEWS STATION
     </div>
   </div>
 
   <!-- NAV BAR -->
-  <div class="n6-navbar" style="background:linear-gradient(#2c507e,#0a1f3d); border-bottom:3px solid #7a0e0e; padding:0 24px; display:flex; gap:2px; font-size:13px; font-weight:bold;">
-    <a class="n6navlink" href="index.html" style="padding:10px 18px; border-right:1px solid #1c3f6e;">HOME</a>
-    <a class="n6navlink" href="#local-section" style="padding:10px 18px; border-right:1px solid #1c3f6e;">LOCAL</a>
-    <a class="n6navlink" href="#nation-section" style="padding:10px 18px; border-right:1px solid #1c3f6e;">NATION</a>
-    <a class="n6navlink" href="NEWS6-Article-Conflict.dc.html" style="padding:10px 18px; border-right:1px solid #1c3f6e;">WORLD</a>
-    <a class="n6navlink" href="NEWS6-Article-Markets.dc.html" style="padding:10px 18px; border-right:1px solid #1c3f6e;">BUSINESS</a>
-    <a class="n6navlink" href="#opinion-section" style="padding:10px 18px; border-right:1px solid #1c3f6e;">OPINION</a>
+  <div class="n6-navbar" style="background:#0a0a0a; border-bottom:3px double #888; padding:0 24px; display:flex; gap:2px; font-size:13px; font-weight:bold;">
+    <a class="n6navlink" href="index.html" style="padding:10px 18px; border-right:1px solid #333;">HOME</a>
+    <a class="n6navlink" href="#local-section" style="padding:10px 18px; border-right:1px solid #333;">LOCAL</a>
+    <a class="n6navlink" href="#nation-section" style="padding:10px 18px; border-right:1px solid #333;">NATION</a>
+    <a class="n6navlink" href="NEWS6-Article-Conflict.dc.html" style="padding:10px 18px; border-right:1px solid #333;">WORLD</a>
+    <a class="n6navlink" href="NEWS6-Article-Markets.dc.html" style="padding:10px 18px; border-right:1px solid #333;">BUSINESS</a>
+    <a class="n6navlink" href="#opinion-section" style="padding:10px 18px; border-right:1px solid #333;">OPINION</a>
     <a class="n6navlink" href="NEWS6-Archive.dc.html" style="padding:10px 18px;">ARCHIVE</a>
   </div>
 
   <!-- BREAKING TICKER -->
-  <div style="background:#7a0e0e; color:#fff; overflow:hidden; white-space:nowrap; border-bottom:1px solid #4a0808;">
+  <div style="background:#ffffff; color:#000000; overflow:hidden; white-space:nowrap; border-bottom:1px solid #444;">
     <div style="display:flex; align-items:center;">
-      <div style="background:#4a0808; padding:6px 14px; font-size:12px; font-weight:bold; flex-shrink:0; z-index:1;">&#9632; BREAKING</div>
+      <div style="background:#000000; color:#ffffff; padding:6px 14px; font-size:12px; font-weight:bold; flex-shrink:0; z-index:1; border-right:1px solid #fff;">&#9632; BREAKING</div>
       <div style="overflow:hidden; flex:1;">
         <div style="display:inline-block; white-space:nowrap; padding:6px 0; font-size:13px; font-weight:bold; animation:ticker-scroll 32s linear infinite;">
           CARGO VESSEL LOST OFF COAST, NO DISTRESS SIGNAL RECEIVED &nbsp;&bull;&nbsp; REGION HIT BY UNEXPLAINED TREMORS FIVE HOURS LATER &nbsp;&bull;&nbsp; ONE DEAD IN HIGHWAY 9 CRASH MINUTES AFTER TREMORS &nbsp;&bull;&nbsp; EMERGENCY CREWS REMAIN ON SCENE &nbsp;&bull;&nbsp; FULL BROADCAST RECORDING NOW AVAILABLE &nbsp;&bull;&nbsp;
@@ -72,19 +73,19 @@
     <div class="n6-contentgrid" style="padding:16px 20px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:16px;" id="local-section">
 
       <!-- LEAD STORY -->
-      <div style="grid-column:1 / span 2; border:1px solid #999; background:#fff;">
-        <div style="background:#7a0e0e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px; letter-spacing:0.5px;">LOCAL &bull; BREAKING NEWS</div>
+      <div style="grid-column:1 / span 2; border:1px solid #666; background:#000;">
+        <div style="background:#ffffff; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px; letter-spacing:0.5px;">LOCAL &bull; BREAKING NEWS</div>
         <div style="padding:14px;">
-          <div class="n6-headline-lead" style="font-family:Georgia, serif; font-weight:bold; font-size:26px; color:#0a1f3d; line-height:1.2; margin-bottom:6px;">Cargo Ship Vanishes Off Coast; No Distress Signal Sent</div>
-          <div style="font-size:11px; color:#777; margin-bottom:10px;">By NEWS 6 Newsroom Staff | Filed 11:47 PM, June 27, 2003</div>
+          <div class="n6-headline-lead" style="font-family:Georgia, serif; font-weight:bold; font-size:26px; color:#ffffff; line-height:1.2; margin-bottom:6px;">Cargo Ship Vanishes Off Coast; No Distress Signal Sent</div>
+          <div style="font-size:11px; color:#888; margin-bottom:10px; font-family:'Courier New',monospace;">By NEWS 6 Newsroom Staff | Filed 11:47 PM, June 27, 2003</div>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <div style="flex:1; min-width:220px;">
-              <div style="border:1px solid #444; margin-bottom:4px;">
-                <img class="n6-lead-photo" src="Broadcast1.jpg" alt="File photo: vessel last known position" style="display:block; width:100%; height:160px; object-fit:cover;">
+              <div style="border:1px solid #666; margin-bottom:4px;">
+                <img class="n6-lead-photo" src="Broadcast1.jpg" alt="File photo: vessel last known position" style="display:block; width:100%; height:160px; object-fit:cover; filter:grayscale(100%) contrast(1.05);">
               </div>
               <div style="font-family:'Courier New',monospace; font-size:10px; color:#777; margin-bottom:10px;">FILE PHOTO &mdash; COAST GUARD / VESSEL LAST KNOWN POSITION</div>
-              <div style="font-size:14px; line-height:1.6; color:#222;">
-                A cargo vessel sank off the coast late Friday night in what officials are calling an unusual and still-unexplained incident. Local fishermen observing the ship through binoculars reported that it went under <strong>in less than a minute</strong>.
+              <div style="font-size:14px; line-height:1.6; color:#bbb;">
+                A cargo vessel sank off the coast late Friday night in what officials are calling an unusual and still-unexplained incident. Local fishermen observing the ship through binoculars reported that it went under <strong style="color:#fff;">in less than a minute</strong>.
                 <br/><br/>
                 No distress call was received from the vessel. Coast Guard radio contact could not be established either before or after the sinking. Rescue crews were dispatched to the area but have not yet located wreckage or survivors.
                 <br/><br/>
@@ -92,9 +93,9 @@
                 <br/><br/>
                 NEWS 6 aired a special emergency broadcast covering both developments as they happened.
               </div>
-              <div style="margin-top:14px; padding:12px; background:#eef1f6; border:1px solid #c3cede;">
+              <div style="margin-top:14px; padding:12px; background:#0a0a0a; border:1px solid #ffffff;">
                 <a class="n6link" href="https://www.youtube.com/watch?v=j3W2VTtSzsk" style="font-weight:bold; font-size:14px;">&#9654; WATCH TONIGHT'S BROADCAST</a>
-                <div style="font-family:'Courier New',monospace; font-size:10px; color:#666; margin-top:4px;">video_archive // broadcast_062703.rec // running time 02:47</div>
+                <div style="font-family:'Courier New',monospace; font-size:10px; color:#777; margin-top:4px;">video_archive // broadcast_062703.rec // running time 02:47</div>
               </div>
             </div>
           </div>
@@ -102,49 +103,49 @@
       </div>
 
       <!-- SECONDARY: OLD MILL -->
-      <div style="border:1px solid #999; background:#fff;">
-        <div style="background:#1c3f6e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL</div>
+      <div style="border:1px solid #555; background:#000;">
+        <div style="background:#e8e8e8; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL</div>
         <div style="padding:12px;">
-          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#0a1f3d; line-height:1.25; margin-bottom:6px;">Authorities Investigate Late-Night Gathering at Old Mill Road</div>
-          <div style="font-size:13px; line-height:1.5; color:#333;">Police responded to reports of a large group gathered on private property near the old grain mill off Route 9 shortly before midnight. Witnesses described chanting and a bonfire visible from the road.</div>
+          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#ffffff; line-height:1.25; margin-bottom:6px;">Authorities Investigate Late-Night Gathering at Old Mill Road</div>
+          <div style="font-size:13px; line-height:1.5; color:#aaa;">Police responded to reports of a large group gathered on private property near the old grain mill off Route 9 shortly before midnight. Witnesses described chanting and a bonfire visible from the road.</div>
           <a class="n6link" href="NEWS6-Article-OldMill.dc.html" style="display:inline-block; margin-top:8px; font-size:12px; font-weight:bold;">Continue reading &raquo;</a>
         </div>
       </div>
 
       <!-- SECONDARY: HIGHWAY 9 -->
-      <div style="border:1px solid #999; background:#fff;">
-        <div style="background:#1c3f6e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL</div>
+      <div style="border:1px solid #555; background:#000;">
+        <div style="background:#e8e8e8; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL</div>
         <div style="padding:12px;">
-          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#0a1f3d; line-height:1.25; margin-bottom:6px;">One Killed in Highway 9 Crash Minutes After Overnight Tremors</div>
-          <div style="font-size:13px; line-height:1.5; color:#333;">One person is dead and another injured after a predawn crash on Highway 9, minutes after the region felt overnight tremors. Officials cite wet pavement; they say there is no confirmed link to the tremors.</div>
+          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#ffffff; line-height:1.25; margin-bottom:6px;">One Killed in Highway 9 Crash Minutes After Overnight Tremors</div>
+          <div style="font-size:13px; line-height:1.5; color:#aaa;">One person is dead and another injured after a predawn crash on Highway 9, minutes after the region felt overnight tremors. Officials cite wet pavement; they say there is no confirmed link to the tremors.</div>
           <a class="n6link" href="NEWS6-Article-Highway9.dc.html" style="display:inline-block; margin-top:8px; font-size:12px; font-weight:bold;">Continue reading &raquo;</a>
         </div>
       </div>
 
       <!-- MARKETS -->
-      <div style="grid-column:2; border:1px solid #999; background:#fff;" id="nation-section">
-        <div style="background:#2e5c3e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">BUSINESS</div>
+      <div style="grid-column:2; border:1px solid #555; background:#000;" id="nation-section">
+        <div style="background:#e8e8e8; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">BUSINESS</div>
         <div style="padding:12px;">
-          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#0a1f3d; line-height:1.25; margin-bottom:6px;">Markets Slide as Ketamba Fighting Threatens Battery-Metal Supply</div>
-          <div style="font-size:13px; line-height:1.5; color:#333;">The Nasdaq shed 1.8% Friday as fighting near the Vela Basin&mdash;a key source of cobalt and lithium&mdash;raised fears of a prolonged supply disruption.</div>
+          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#ffffff; line-height:1.25; margin-bottom:6px;">Markets Slide as Ketamba Fighting Threatens Battery-Metal Supply</div>
+          <div style="font-size:13px; line-height:1.5; color:#aaa;">The Nasdaq shed 1.8% Friday as fighting near the Vela Basin&mdash;a key source of cobalt and lithium&mdash;raised fears of a prolonged supply disruption.</div>
           <a class="n6link" href="NEWS6-Article-Markets.dc.html" style="display:inline-block; margin-top:8px; font-size:12px; font-weight:bold;">Continue reading &raquo;</a>
         </div>
       </div>
 
       <!-- WORLD -->
-      <div class="n6-world-col" style="grid-column:3; border:1px solid #999; background:#fff;">
-        <div style="background:#4a3b6e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">WORLD</div>
+      <div class="n6-world-col" style="grid-column:3; border:1px solid #555; background:#000;">
+        <div style="background:#e8e8e8; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">WORLD</div>
         <div style="padding:12px;">
-          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#0a1f3d; line-height:1.25; margin-bottom:6px;">Diplomats Push for Ceasefire as Ketamba Border Conflict Enters Third Week</div>
-          <div style="font-size:13px; line-height:1.5; color:#333;">Talks continue to broker a ceasefire along the Ketamba-Bakori border, where fighters linked to the private military contractor Meridian Defense Group have been active since early in the conflict.</div>
+          <div style="font-family:Georgia, serif; font-weight:bold; font-size:16px; color:#ffffff; line-height:1.25; margin-bottom:6px;">Diplomats Push for Ceasefire as Ketamba Border Conflict Enters Third Week</div>
+          <div style="font-size:13px; line-height:1.5; color:#aaa;">Talks continue to broker a ceasefire along the Ketamba-Bakori border, where fighters linked to the private military contractor Meridian Defense Group have been active since early in the conflict.</div>
           <a class="n6link" href="NEWS6-Article-Conflict.dc.html" style="display:inline-block; margin-top:8px; font-size:12px; font-weight:bold;">Continue reading &raquo;</a>
         </div>
       </div>
 
       <!-- LOCAL BRIEFS spans -->
-      <div class="n6-briefs-outer" style="grid-column:1 / span 3; border:1px solid #999; background:#fff;" id="opinion-section">
-        <div style="background:#0a1f3d; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL BRIEFS</div>
-        <div class="n6-briefs" style="padding:12px 16px; display:grid; grid-template-columns:repeat(2,1fr); gap:6px 24px; font-size:13px; color:#333;">
+      <div class="n6-briefs-outer" style="grid-column:1 / span 3; border:1px solid #555; background:#000;" id="opinion-section">
+        <div style="background:#ffffff; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL BRIEFS</div>
+        <div class="n6-briefs" style="padding:12px 16px; display:grid; grid-template-columns:repeat(2,1fr); gap:6px 24px; font-size:13px; color:#aaa;">
           <div>&bull; County fair postponed one week due to venue repairs.</div>
           <div>&bull; Public library extends summer hours starting Monday.</div>
           <div>&bull; Several fishing crews report unusually strong currents this week; Coast Guard says conditions remain within normal range.</div>
@@ -155,20 +156,20 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div class="n6-sidebar" style="padding:16px 10px; border-left:1px solid #bbb; background:#dedad0; display:flex; flex-direction:column; gap:14px;">
+    <div class="n6-sidebar" style="padding:16px 10px; border-left:1px solid #444; background:#050505; display:flex; flex-direction:column; gap:14px;">
 
-      <div style="border:1px solid #999; background:#fff;">
-        <div style="background:#333; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">SITE INFO</div>
+      <div style="border:1px solid #555; background:#000;">
+        <div style="background:#ffffff; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">SITE INFO</div>
         <div style="padding:10px; display:flex; flex-direction:column; gap:6px; align-items:center;">
-          <div style="border:2px outset #ccc; background:#e8e8e8; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#222;">BEST VIEWED<br/>800x600<br/>IE 5.0+</div>
-          <div style="border:2px outset #ccc; background:#e8e8e8; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#222;">56K MODEM<br/>FRIENDLY</div>
-          <div style="border:2px outset #ccc; background:#e8e8e8; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#222;">W3C<br/>VALID HTML</div>
+          <div style="border:2px outset #777; background:#1a1a1a; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#ccc;">BEST VIEWED<br/>800x600<br/>IE 5.0+</div>
+          <div style="border:2px outset #777; background:#1a1a1a; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#ccc;">56K MODEM<br/>FRIENDLY</div>
+          <div style="border:2px outset #777; background:#1a1a1a; font-family:'Courier New',monospace; font-size:10px; font-weight:bold; padding:5px 8px; width:88px; text-align:center; color:#ccc;">W3C<br/>VALID HTML</div>
         </div>
       </div>
 
-      <div style="border:1px solid #999; background:#fff;">
-        <div style="background:#1c3f6e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">BROADCAST ARCHIVE</div>
-        <div style="padding:12px; font-size:12px; color:#333; line-height:1.6;">
+      <div style="border:1px solid #555; background:#000;">
+        <div style="background:#ffffff; color:#000000; font-size:11px; font-weight:bold; padding:5px 10px;">BROADCAST ARCHIVE</div>
+        <div style="padding:12px; font-size:12px; color:#aaa; line-height:1.6;">
           Catch up on past NEWS 6 special broadcasts.
           <a class="n6link" href="NEWS6-Archive.dc.html" style="display:block; margin-top:8px; font-weight:bold;">View Full Archive &raquo;</a>
         </div>
@@ -179,7 +180,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div style="background:#0a1f3d; color:#9fb3c8; padding:18px 24px; font-size:11px;">
+  <div style="background:#000; color:#777; padding:18px 24px; font-size:11px; border-top:1px solid #444;">
     <div style="display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px;">
       <a class="n6navlink" href="404.html" style="font-size:11px;">About Us</a>
       <a class="n6navlink" href="404.html" style="font-size:11px;">Contact</a>
@@ -188,7 +189,7 @@
       <a class="n6navlink" href="404.html" style="font-size:11px;">Site Map</a>
       <a class="n6navlink" href="NEWS6-Archive.dc.html" style="font-size:11px;">Archive</a>
     </div>
-    <div style="border-top:1px solid #1c3f6e; padding-top:10px; color:#7891ad;">
+    <div style="border-top:1px solid #222; padding-top:10px; color:#666;">
       &copy; 2003 NEWS 6 Broadcasting Co. All rights reserved. Last updated 06/27/2003.
       <br/><br/>
       This website is a work of fiction created as part of an independent analog horror series. All names, events, organizations, and news items depicted are fictional. Any resemblance to real persons, places, or events is purely coincidental and unintentional. No offense is intended toward any individual, group, or organization. This site exists purely for entertainment purposes as an extension of the accompanying video series.

@@ -50,7 +50,7 @@ html, body {
   }
   .n6-sidebar {
     border-left: none !important;
-    border-top: 1px solid #bbb !important;
+    border-top: 1px solid #444 !important;
   }
 
   /* index.html: story grid becomes two columns (tablet / large phone) */
