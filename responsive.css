@@ -1,0 +1,96 @@
+/* NEWS 6 Online — mobile responsive overrides.
+   Loaded on every page; base layout stays inline (desktop-first),
+   these rules only kick in and reflow things for narrow viewports. */
+
+@media (max-width: 860px) {
+  .n6-util {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    font-size: 10px !important;
+    padding: 4px 12px !important;
+  }
+
+  .n6-masthead {
+    padding: 14px 12px 8px 12px !important;
+  }
+  .n6-logo {
+    font-size: 38px !important;
+  }
+  .n6-tagline {
+    font-size: 12px !important;
+  }
+  .n6-datebar {
+    text-align: left !important;
+    font-size: 11px !important;
+  }
+
+  .n6-navbar {
+    flex-wrap: wrap !important;
+    padding: 4px 8px !important;
+  }
+  .n6-navbar a {
+    padding: 8px 10px !important;
+    font-size: 12px !important;
+  }
+
+  .n6-breadcrumb {
+    padding: 8px 12px !important;
+  }
+
+  /* index.html: sidebar drops below main column */
+  .n6-maingrid {
+    grid-template-columns: 1fr !important;
+  }
+  .n6-sidebar {
+    border-left: none !important;
+    border-top: 1px solid #bbb !important;
+  }
+
+  /* index.html: story grid collapses to one stacked column */
+  .n6-contentgrid {
+    grid-template-columns: 1fr !important;
+    padding: 12px !important;
+  }
+  .n6-contentgrid > div {
+    grid-column: 1 !important;
+  }
+  .n6-briefs {
+    grid-template-columns: 1fr !important;
+  }
+  .n6-headline-lead {
+    font-size: 21px !important;
+  }
+
+  /* Article pages: tighten padding, shrink headline */
+  .n6-article-wrap {
+    padding: 0 12px 16px 12px !important;
+  }
+  .n6-article-pad {
+    padding: 16px 14px !important;
+  }
+  .n6-headline {
+    font-size: 22px !important;
+  }
+  .n6-photo-placeholder {
+    height: 140px !important;
+  }
+
+  /* Archive page: cards stack instead of 3-across */
+  .n6-archivegrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 404 page */
+  .n6-404block {
+    padding: 20px 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .n6-logo {
+    font-size: 30px !important;
+  }
+  .n6-tagline {
+    display: none !important;
+  }
+}

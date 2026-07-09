@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 <x-dc>
@@ -23,25 +24,25 @@
 <div style="width:100%; max-width:1920px; background:#e9e6da; box-shadow:0 0 0 1px #999;">
 
   <!-- UTILITY BAR -->
-  <div style="background:#0a1f3d; color:#c9d6e8; font-size:11px; padding:4px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #d4af37;">
+  <div class="n6-util" style="background:#0a1f3d; color:#c9d6e8; font-size:11px; padding:4px 24px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #d4af37;">
     <div>WELCOME TO NEWS 6 ONLINE &nbsp;|&nbsp; <span style="color:#8fa8cc;">Serving the coastal region since 1974</span></div>
     <div>LOCAL TIME: <span style="color:#ffffff; font-weight:bold;">{{ clockStr }}</span></div>
   </div>
 
   <!-- MASTHEAD -->
-  <div style="padding:18px 24px 10px 24px; border-bottom:1px solid #999; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+  <div class="n6-masthead" style="padding:18px 24px 10px 24px; border-bottom:1px solid #999; display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:10px;">
     <div style="display:flex; align-items:baseline; gap:16px;">
-      <div style="font-family:Georgia, 'Times New Roman', serif; font-weight:900; font-size:64px; letter-spacing:-2px; color:#0a1f3d; line-height:1;">NEWS<span style="color:#7a0e0e;">6</span></div>
-      <div style="font-family:Georgia, serif; font-style:italic; font-size:16px; color:#555; padding-bottom:8px;">"First With The Facts"</div>
+      <div class="n6-logo" style="font-family:Georgia, 'Times New Roman', serif; font-weight:900; font-size:64px; letter-spacing:-2px; color:#0a1f3d; line-height:1;">NEWS<span style="color:#7a0e0e;">6</span></div>
+      <div class="n6-tagline" style="font-family:Georgia, serif; font-style:italic; font-size:16px; color:#555; padding-bottom:8px;">"First With The Facts"</div>
     </div>
-    <div style="text-align:right; font-size:12px; color:#444; padding-bottom:8px;">
+    <div class="n6-datebar" style="text-align:right; font-size:12px; color:#444; padding-bottom:8px;">
       FRIDAY, JUNE 27, 2003 &nbsp;|&nbsp; UPDATED 11:52 PM<br/>
       CHANNEL 6 &mdash; YOUR LOCAL NEWS STATION
     </div>
   </div>
 
   <!-- NAV BAR -->
-  <div style="background:linear-gradient(#2c507e,#0a1f3d); border-bottom:3px solid #7a0e0e; padding:0 24px; display:flex; gap:2px; font-size:13px; font-weight:bold;">
+  <div class="n6-navbar" style="background:linear-gradient(#2c507e,#0a1f3d); border-bottom:3px solid #7a0e0e; padding:0 24px; display:flex; gap:2px; font-size:13px; font-weight:bold;">
     <a class="n6navlink" href="index.html" style="padding:10px 18px; border-right:1px solid #1c3f6e;">HOME</a>
     <a class="n6navlink" href="#local-section" style="padding:10px 18px; border-right:1px solid #1c3f6e;">LOCAL</a>
     <a class="n6navlink" href="#nation-section" style="padding:10px 18px; border-right:1px solid #1c3f6e;">NATION</a>
@@ -65,16 +66,16 @@
   </div>
 
   <!-- MAIN GRID -->
-  <div style="display:grid; grid-template-columns:1fr 260px; gap:0;">
+  <div class="n6-maingrid" style="display:grid; grid-template-columns:1fr 260px; gap:0;">
 
     <!-- CENTER CONTENT -->
-    <div style="padding:16px 20px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:16px;" id="local-section">
+    <div class="n6-contentgrid" style="padding:16px 20px; display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:16px;" id="local-section">
 
       <!-- LEAD STORY -->
       <div style="grid-column:1 / span 2; border:1px solid #999; background:#fff;">
         <div style="background:#7a0e0e; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px; letter-spacing:0.5px;">LOCAL &bull; BREAKING NEWS</div>
         <div style="padding:14px;">
-          <div style="font-family:Georgia, serif; font-weight:bold; font-size:26px; color:#0a1f3d; line-height:1.2; margin-bottom:6px;">Cargo Ship Vanishes Off Coast; No Distress Signal Sent</div>
+          <div class="n6-headline-lead" style="font-family:Georgia, serif; font-weight:bold; font-size:26px; color:#0a1f3d; line-height:1.2; margin-bottom:6px;">Cargo Ship Vanishes Off Coast; No Distress Signal Sent</div>
           <div style="font-size:11px; color:#777; margin-bottom:10px;">By NEWS 6 Newsroom Staff | Filed 11:47 PM, June 27, 2003</div>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <div style="flex:1; min-width:220px;">
@@ -143,7 +144,7 @@
       <!-- LOCAL BRIEFS spans -->
       <div style="grid-column:1 / span 3; border:1px solid #999; background:#fff;" id="opinion-section">
         <div style="background:#0a1f3d; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">LOCAL BRIEFS</div>
-        <div style="padding:12px 16px; display:grid; grid-template-columns:repeat(2,1fr); gap:6px 24px; font-size:13px; color:#333;">
+        <div class="n6-briefs" style="padding:12px 16px; display:grid; grid-template-columns:repeat(2,1fr); gap:6px 24px; font-size:13px; color:#333;">
           <div>&bull; County fair postponed one week due to venue repairs.</div>
           <div>&bull; Public library extends summer hours starting Monday.</div>
           <div>&bull; Several fishing crews report unusually strong currents this week; Coast Guard says conditions remain within normal range.</div>
@@ -154,7 +155,7 @@
     </div>
 
     <!-- RIGHT SIDEBAR -->
-    <div style="padding:16px 10px; border-left:1px solid #bbb; background:#dedad0; display:flex; flex-direction:column; gap:14px;">
+    <div class="n6-sidebar" style="padding:16px 10px; border-left:1px solid #bbb; background:#dedad0; display:flex; flex-direction:column; gap:14px;">
 
       <div style="border:1px solid #999; background:#fff;">
         <div style="background:#333; color:#fff; font-size:11px; font-weight:bold; padding:5px 10px;">SITE INFO</div>
