@@ -59,9 +59,6 @@ html, body {
     grid-auto-flow: dense !important;
     padding: 14px !important;
   }
-  .n6-world-col {
-    grid-column: 1 !important;
-  }
   .n6-briefs-outer {
     grid-column: 1 / span 2 !important;
   }
