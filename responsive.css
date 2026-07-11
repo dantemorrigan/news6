@@ -88,6 +88,11 @@ html, body {
     grid-template-columns: 1fr 1fr !important;
   }
 
+  /* Found Footage index: featured/secondary cards stack */
+  .n6-footagegrid {
+    grid-template-columns: 1fr !important;
+  }
+
   /* 404 page */
   .n6-404block {
     padding: 24px 16px !important;
